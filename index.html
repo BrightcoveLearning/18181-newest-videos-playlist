@@ -43,10 +43,10 @@
         videoData = [],
         videoObjects = [];
 
-      // +++ set up data for CMS API request +++
+      // +++ Set up data for CMS API request +++
       requestData = setRequestData();
 
-      // +++ make the CMS API request to get matching video IDs +++
+      // +++ Make the CMS API request to get matching video IDs +++
       getNewestVideos(requestData, function(newestVideos) {
         // extract the needed video data into an array
         videoData = extractVideoData(newestVideos);
@@ -144,13 +144,12 @@
         iMax = videoIds.length,
         videoObjectsForReturn = [];
       /**
-       * makes catalog calls for all video ids in the array
+       * Makes catalog calls for all video ids in the array
        */
       getVideo();
 
       function getVideo() {
         if (i < iMax) {
-          console.log('in call');
           myPlayer.catalog.getVideo(videoIds[i].id, pushData);
         } else {
           callback(videoObjectsForReturn);
@@ -165,7 +164,6 @@
        * @parap {object} video the video object
        */
       function pushData(error, video) {
-        console.log('video', video);
         videoObjectsForReturn.push(video);
         i++;
         getVideo();
