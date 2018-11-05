@@ -9,22 +9,21 @@
 
 <body>
 
-  <video id="myPlayerID" data-account="1752604059001"
+  <video-js id="myPlayerID" data-account="1752604059001"
   data-player="BJlTEWMCAZ"
   data-embed="default"
   data-application-id
   class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1752604059001/BJlTEWMCAZ_default/index.min.js"></script>
+  controls></video-js>
+  <script src="https://players.brightcove.net/1752604059001/BJlTEWMCAZ_default/index.min.js"></script>
 
   <ol class="vjs-playlist"></ol>
 
   <script src="newest-videos-in-playlist-plugin.js"></script>
 
   <script type="text/javascript">
-    videojs('myPlayerID').ready(function(){
+    videojs.getPlayer('myPlayerID').ready(function() {
       var myPlayer = this;
-      console.log(myPlayer);
       myPlayer.newestVideosInPlaylist();
     });
   </script>

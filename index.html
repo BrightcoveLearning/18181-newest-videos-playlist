@@ -22,14 +22,14 @@
 
 <body>
 
-  <video id="myPlayerID"
+  <video-js id="myPlayerID"
     data-account="1752604059001"
     data-player="SygDbkkQ6"
     data-embed="default"
     data-application-id
     class="video-js"
-    controls></video>
-  <script src="//players.brightcove.net/1752604059001/SygDbkkQ6_default/index.min.js"></script>
+    controls></video-js>
+  <script src="https://players.brightcove.net/1752604059001/SygDbkkQ6_default/index.min.js"></script>
   <ol class="vjs-playlist"></ol>
 
   <script type="text/javascript">
@@ -45,7 +45,7 @@
   endPoint = "?sort=-created_at&limit=10";
   options.url = baseURL + accountId + "/videos" + endPoint;
 
-  videojs("myPlayerID").ready(function () {
+  videojs.getPlayer('myPlayerID').ready(function() {
     myPlayer = this,
     requestData = {},
     newestVideos = [],
